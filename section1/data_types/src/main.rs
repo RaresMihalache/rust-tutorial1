@@ -1,5 +1,6 @@
 fn main() {
 
+    // BASIC DATA TYPES
     // Integers
     let x: i8 = 10;
     println!("{}", x);
@@ -31,4 +32,15 @@ fn main() {
     let c = 'c';
 
     println!("{}", c);
+
+    // COMPOUND DATA TYPES
+    // Tuples -> fixed length (can not grow in size). Can consist of different types
+    let tup = (500, "hi", true);
+    println!("{}", tup.2);
+    let (x, y, z) = tup;
+
+    println!("{}", x); // 500
+    println!("{}", y); // hi
+    println!("{}", z); // true
+
 }
