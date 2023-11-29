@@ -124,4 +124,10 @@ fn main() {
     // Like vectors, strings have a lot of methods associated to them
     // compare strings with "==". Not equal with "!="
     println!("{}", "ONE".to_lowercase() == "one");
+
+    // String literals
+    // Strings and string slices are ALWAYS going to be a VALID UTF-8 sequence.
+    // Sometimes you might NOT want a VALID UTF-8 sequence, and this is where you USE "string literals"
+    let rust = "\x52\x75\x73\x74"; // sequnece of string literals
+    println!("{}", rust); // Rust
 }
