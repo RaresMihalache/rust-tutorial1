@@ -82,4 +82,18 @@ fn main() {
 
     let v: Vec<i32> = (0..5).collect(); // construct a vector with an iterator that has the elements from [0, 5)
     println!("{:?}", v);
+
+    // Slices -> region of an array / vector that can be any length.
+    // Slices can not be stored directly into a variable or passed as function arguments
+    // Crate a slice
+    let sv: &[i32] = &v; // point the slice to the address of memory where the slice starts -> point sv to where our slice starts (the vector). The reference to the slice is called a "fat pointer"
+    println!("{:?}", sv); // prints out the content of vector, because we point to the beginning of the vector
+
+    // If we want we can point to some custom slice
+    let sv: &[i32] = &v[2..4]; // point directly to the data in vector v - not owning reference!
+    println!("{:?}", sv); // [2, 3]
+
+    // An ordinary reference is a non-owning pointer to a single value
+    // A reference to a slice is a non-owning pointer to a range of consecutive values.
+
 }
