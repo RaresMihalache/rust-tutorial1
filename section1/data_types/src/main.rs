@@ -51,4 +51,35 @@ fn main() {
     println!("{}", array2[0]);
     array2[0] = 10;
     println!("{}", array2[0]);
+
+    // Vectors -> resizable array of elements allocated on the heap. Use it when you need a list of dynamic size
+    // Create a vector using the vec! macro
+    let mut nums = vec![1, 2, 3];
+
+    nums.push(4);
+    // println!("{}", nums); // error ^^^^ `Vec<{integer}>` cannot be formatted with the default formatter
+    // Use :? for debug mode in formatter
+    println!("{:?}", nums);
+
+    nums.pop(); // remove last element
+    println!("{:?}", nums);
+
+    // another way to create vectors
+    let mut vec = Vec::new(); // when using the "vec!" macro what that actually does is calin the Vec::new() constructor
+    vec.push("test");
+    vec.push("string");
+    println!("{:?}", vec);
+
+    vec.reverse();
+    println!("{:?}", vec);
+
+    let mut vect = Vec::<i32>::with_capacity(2);
+    vect.push(4);
+    vect.push(4);
+    vect.push(4);
+    println!("{:?}", vect.capacity());
+    println!("{:?}", vect);
+
+    let v: Vec<i32> = (0..5).collect(); // construct a vector with an iterator that has the elements from [0, 5)
+    println!("{:?}", v);
 }
