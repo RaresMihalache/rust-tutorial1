@@ -96,4 +96,32 @@ fn main() {
     // An ordinary reference is a non-owning pointer to a single value
     // A reference to a slice is a non-owning pointer to a range of consecutive values.
 
+    // Strings and &str
+    // Strings are very similar to vectors (stored as vector of bytes)
+    // Strings are allocated on the heap, growable, NOT NULL terminated!
+
+    let name = String::from("Tyler"); // 1st example of allocating a string
+    let course = "Rust".to_string(); // 2nd example of allocating a string
+    let new_name = name.replace("Tyler", "Ty");
+
+    println!("{}", name);
+    println!("{}", course);
+    println!("{}", new_name);
+
+    // &str = "string slice" or "stir" -> reference & borrow the text from a variable - "fat pointer" - contains both the address and the actual data and its length.
+    // you can not modify a string slice.
+    let str1 = "hello"; // &str
+    let str2 = str1.to_string(); // converted &str to string
+    let str3 = &str2; // converted string "str2" to string slcie "&str2"
+    // Strings vs String Slices:
+    // String slices are more appropriate for function arguments, when the caller should be allowed to pass either kind of string (string | string literal).
+    // String slice DOES NOT allocate memory on the heap, while the string DOES.
+
+    println!("{}", str1); // hello
+    println!("{}", str2); // hello
+    println!("{}", str3); // hello
+
+    // Like vectors, strings have a lot of methods associated to them
+    // compare strings with "==". Not equal with "!="
+    println!("{}", "ONE".to_lowercase() == "one");
 }
