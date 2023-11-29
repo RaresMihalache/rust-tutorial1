@@ -6,7 +6,7 @@ fn main() {
 
     // Move mechanics
     let x = vec!["tyler".to_string()];
-    let y = x;
+    let y = x.clone(); // solve the below error of ownership by making a clone
     println!("{:?}", x); // error: borrow of moved value: `x`
     println!("{:?}", y);
 }
