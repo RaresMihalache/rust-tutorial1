@@ -38,13 +38,19 @@ fn main() {
         println!("{}", str5);
     }
 
-    let mut str1 = String::from("Tyler");
-    let mut str2: String;
-    loop {
-        str2 = str1; // ownership problem: str1 will lose reference after first iteration
-    }
+    // let mut str1 = String::from("Tyler");
+    // let mut str2: String;
+    // loop {
+    //     str2 = str1; // ownership problem: str1 will lose reference after first iteration
+    // }
 
+    let mut s = String::from("hello");
+    change_string(&mut s);
+    println!("{}", s);
+}
 
+fn change_string(some_string: &mut String) {
+    some_string.push_str(", world");
 }
 
 fn takes_ownership(s: String) {
